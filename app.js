@@ -24,6 +24,9 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+//=========================
+//ROUTES
+//=========================
 
 app.set('view engine', 'ejs');
 app.use(passport.initialize()); //need these two lines anytime use passport
@@ -37,6 +40,9 @@ app.get("/secret", function(req, res){
     res.render("secret");
 })
 
+app.get("/register", function(req, res){
+    res.render("register");
+})
 
 app.listen(3000, function(){
     console.log("Server has started!")
